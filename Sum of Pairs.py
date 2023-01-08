@@ -1,0 +1,20 @@
+t=int(input())
+for i in range(t):
+    n,k=map(int,input().strip().split())
+    l1=list(map(int,input().strip().split()))
+    l=sorted(l1)
+    low=0
+    high=n-1
+    c=0
+    while(low!=high):
+        if(l[low]+l[high]==k):
+            c=1
+            break
+        elif(l[low]+l[high]<k):
+            low+=1
+        else:
+            high-=1
+    if(c==1):
+        print("True")
+    else:
+        print("False")
